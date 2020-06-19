@@ -5,7 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
-import { SeoTagsData } from "../dist/types/models/interfaces";
+import { SeoTagsData } from "./models/interfaces";
 export namespace Components {
     interface DlcSeoTags {
         "data": SeoTagsData;

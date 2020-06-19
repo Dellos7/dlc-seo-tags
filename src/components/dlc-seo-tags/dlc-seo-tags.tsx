@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { SeoTagsData, MetaTag, LinkTag } from '../../../dist/types/models/interfaces';
+import { SeoTagsData, MetaTag, LinkTag } from '../../models/interfaces';
 
 const linksRelUnique = [ 'canonical', 'icon', 'manifest' ];
 
