@@ -4,6 +4,71 @@
 
 # dlc-seo-tags
 
+## Install
+
+```bash
+npm i dlc-seo-tags --save
+```
+
+## Use in a Stencil app
+
+Import the component in `src/index.ts`:
+
+```bash
+// ...
+import 'dlc-seo-tags';
+```
+
+**Usage**. Example in a component acting as a page:
+
+```bash
+import { Component, h } from '@stencil/core';
+import { SeoTagsData } from 'dlc-seo-tags';
+
+const seoData: SeoTagsData = {
+  title: 'About page',
+  meta: [
+    { name: 'description', 'Description of this page' },
+    { property: 'og:description', content: 'Description of this page' },
+    { property: 'og:image', content: '/any/image/path.jpg' },
+    { property: 'og:url', content: `${window.location.origin}${window.location.pathname}` },
+    { name: 'twitter:title', 'About page' },
+    { name: 'twitter:description', 'Description of this page' },
+    { name: 'twitter:card', content: 'summary' },
+    { name: 'twitter:site', content: '@_dlopezcast' },
+    { name: 'twitter:creator', content: '@_dlopezcast' },
+  ],
+  links: [
+    { rel: 'canonical', href: `${window.location.origin}${window.location.pathname}` }
+  ]
+};
+
+@Component({
+  tag: 'about-page',
+  styleUrl: 'about-page.scss'
+})
+export class AboutPage {
+
+  render() {
+    return (
+      <div class="about-page">
+        <dlc-seo-tags data={seoData}></dlc-seo-tags>
+        <header>
+          <h1>Hey, my name is David!</h1>
+        </header>
+        <main>
+          <p>Description of myself ;)</p>
+        </main>
+      </div>
+    );
+  }
+}
+
+```
+
+
+## Publish package notes
+
 ```bash
 git config alias.tag-release '!git tag release-$(cat package.json | grep version | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")-$(cat package.json | grep name | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")'
 ```
