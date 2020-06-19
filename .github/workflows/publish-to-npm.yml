@@ -4,15 +4,27 @@ on:
       - 'release_*'
 
 jobs:
-  publish_to_npm:
+  tests:
+    name: Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 
         uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 12
       - name: Install dependencies
         run: npm install
       - name: Run tests
         run: npm run test
+
+  publish_to_npm:
+    name: Publish to NPM
+    needs: tests
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 
+        uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
