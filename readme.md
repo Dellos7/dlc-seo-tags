@@ -3,6 +3,11 @@
 
 # dlc-seo-tags
 
+A web component that lets you programmatically update the most common SEO tags of your website:
+- `<title>My page title</title>`
+- `<meta>` tags (e.g `<meta name="description" content="any content here"/>`, `<meta property="og:description" content="any content here"/>`, `<meta property="twitter:title" content="title here"/>`...)
+- `<link>` tags (e.g `<link rel="canonical" href="http://my-canonical-url" />`...)
+
 ## Install
 
 ```bash
@@ -106,7 +111,7 @@ Example:
       links: [
         {
           rel: 'canonical',
-          href: 'http://my-awesome-site.com/any-path'
+          href: window.location.origin + window.location.pathname
         }
       ]
     };
