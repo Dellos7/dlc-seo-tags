@@ -3,7 +3,7 @@
 # dlc-seo-tags
 
 ```bash
-git config alias.tag-release '!git tag Release 🔥 $(cat package.json | grep version | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")-$(cat package.json | grep name | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")'
+git config alias.tag-release '!git tag release-$(cat package.json | grep version | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")-$(cat package.json | grep name | head -1 | awk -F: "{ print $2 }" | sed "s/[\",]//g" | tr -d "[[:space:]]")'
 ```
 
 ```bash
