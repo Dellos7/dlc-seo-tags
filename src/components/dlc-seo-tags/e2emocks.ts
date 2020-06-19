@@ -1,4 +1,4 @@
-import { MetaTag, SeoTagsData } from '../../../dist/types/models/interfaces';
+import { MetaTag, SeoTagsData } from '../../models/interfaces';
 
 export const metaDescriptionTag: MetaTag = {
     name: 'description',
