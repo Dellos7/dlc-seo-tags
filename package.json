@@ -1,6 +1,6 @@
 {
   "name": "dlc-seo-tags",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Web component in order to update the most common Seo Tags of the head in your html file.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

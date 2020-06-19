@@ -1,6 +1,7 @@
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - 'release_*'
 
 jobs:
   publish_to_npm:
