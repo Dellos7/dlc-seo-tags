@@ -1,9 +1,10 @@
+name: Test and NPM publish
 on:
   push:
     tags:
       - 'release_*'
 
-jobs:    
+jobs:
   publish_to_npm:
     name: Publish to NPM
     runs-on: ubuntu-latest
