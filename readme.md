@@ -21,7 +21,7 @@ import 'dlc-seo-tags';
 
 **Usage**. Example in a component acting as a page:
 
-```bash
+```tsx
 import { Component, h } from '@stencil/core';
 import { SeoTagsData } from 'dlc-seo-tags';
 
