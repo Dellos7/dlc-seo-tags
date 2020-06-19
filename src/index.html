@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+  <title>Stencil Component Starter</title>
+  <link rel="canonical" href="http://localhost:3334" />
+  <script type="module" src="/build/dlc-seo-tags.esm.js"></script>
+  <script nomodule src="/build/dlc-seo-tags.js"></script>
+
+</head>
+<body>
+
+  <dlc-seo-tags></dlc-seo-tags>
+
+  <script>
+    const seoData = {
+      title: 'Titulo cambiado',
+      meta: [
+        {
+          name: 'description',
+          content: 'La descripción :O'
+        },
+        {
+          property: 'og:description',
+          content: 'La OG description ;)'
+        },
+        {
+          property: 'twitter:site',
+          content: '@_dlopezcast'
+        }
+      ],
+      links: [
+        {
+          rel: 'canonical',
+          href: 'http://localhost:3333/'
+        }
+      ]
+    };
+    window.onload = () => {
+      const dlcSeoTagsEl = document.querySelector('dlc-seo-tags');
+      dlcSeoTagsEl.data = seoData;
+    };
+    
+
+  </script>
+
+</body>
+</html>
