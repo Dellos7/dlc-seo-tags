@@ -1,6 +1,6 @@
 {
   "name": "dlc-seo-tags",
-  "version": "0.0.61",
+  "version": "0.0.7",
   "description": "Web component in order to update the most common Seo Tags of the head in your html file.",
   "main": "dist/index.js",
   "module": "dist/index.mjs",
@@ -30,5 +30,21 @@
     "jest-cli": "26.0.1",
     "puppeteer": "2.1.1"
   },
-  "license": "MIT"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dellos7/dlc-seo-tags.git"
+  },
+  "author": "David López Castellote",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dellos7/dlc-seo-tags/issues"
+  },
+  "homepage": "https://github.com/Dellos7/dlc-seo-tags#readme",
+  "keywords": [
+    "seo",
+    "tags",
+    "meta",
+    "meta tags",
+    "stencil"
+  ]
 }
