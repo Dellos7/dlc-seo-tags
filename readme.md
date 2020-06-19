@@ -13,7 +13,7 @@ npm i dlc-seo-tags --save
 
 Import the component in `src/index.ts`:
 
-```bash
+```typescript
 // ...
 import 'dlc-seo-tags';
 ```
@@ -65,6 +65,62 @@ export class AboutPage {
 
 ```
 
+## Use in an `html` file
+
+Include the web component in your html file with the following script tag:
+
+```html
+<script type="text/javascript" src="https://unpkg.com/dlc-seo-tags@latest/dist/dlc-seo-tags/dlc-seo-tags.js"></script>
+```
+
+Example:
+
+```html
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
+</head>
+<body>
+
+  <dlc-seo-tags></dlc-seo-tags>
+  <script type="text/javascript" src="https://unpkg.com/dlc-seo-tags@latest/dist/dlc-seo-tags/dlc-seo-tags.js"></script>
+  <script>
+    const seoData = {
+      title: 'Page title',
+      meta: [
+        {
+          name: 'description',
+          content: 'Page description'
+        },
+        {
+          property: 'og:description',
+          content: 'Page og:description ;)'
+        },
+        {
+          property: 'twitter:site',
+          content: '@_dlopezcast'
+        }
+      ],
+      links: [
+        {
+          rel: 'canonical',
+          href: 'http://my-awesome-site.com/any-path'
+        }
+      ]
+    };
+    window.onload = () => {
+      const dlcSeoTagsEl = document.querySelector('dlc-seo-tags');
+      dlcSeoTagsEl.data = seoData;
+    };
+    
+
+  </script>
+
+</body>
+</html>
+```
 
 ## Publish package notes
 
