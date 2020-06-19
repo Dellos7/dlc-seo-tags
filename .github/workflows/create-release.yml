@@ -8,14 +8,14 @@ jobs:
   create-release:
     runs-on: ubuntu-latest
     steps:
-      - name: Get package version
-        run: PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
-      - name: Get package name
-        run: PACKAGE_NAME=$(cat package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
-      - name: Set release
-        run: RELEASE=${PACKAGE_NAME}-${PACKAGE_VERSION}
+      - name: Get package info
+        run: |
+          PACKAGE_VERSION=$(cat package.json | grep version | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
+          PACKAGE_NAME=$(cat package.json | grep name | head -1 | awk -F: '{ print $2 }' | sed 's/[\",]//g' | tr -d '[[:space:]]')
+          RELEASE=${PACKAGE_NAME}-${PACKAGE_VERSION}
       - name: Create release
-        run: curl --data '{"tag_name": "v$PACKAGE_VERSION", \
+        run: |
+          curl --data '{"tag_name": "v$PACKAGE_VERSION", \
               "target_commitish": "master", \
               "name": "$RELEASE", \
               "body": "Release $RELEASE", \
